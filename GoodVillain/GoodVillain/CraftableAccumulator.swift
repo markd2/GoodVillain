@@ -8,6 +8,10 @@ class CraftableAccumulator {
         self.store = store
     }
 
+    func reset() {
+        seenItems = [:]
+    }
+
     func accumulate(element: String, count: Int = 1) {
         let elementCount = seenItems[element, default: 0]
         seenItems[element] = elementCount + count
