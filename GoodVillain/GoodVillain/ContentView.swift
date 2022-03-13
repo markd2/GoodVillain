@@ -2,7 +2,7 @@
 import SwiftUI
 
 let store = CraftableStore.shared
-let accumulator = CraftableAccumulator(store: store)
+var accumulator = CraftableAccumulator(store: store)
 
 struct CraftableList: View {
     let store: CraftableStore
@@ -46,6 +46,10 @@ struct ContentView: View {
         VStack {
             Text("Good Villain")
             CraftableList(store: store, trigger: $trigger)
+            Button("Reset") {
+                accumulator.reset()
+                trigger += 1
+            }
             AccumulatorList(accumulator: accumulator, trigger: $trigger)
         }
     }
