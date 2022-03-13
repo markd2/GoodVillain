@@ -49,7 +49,43 @@ class CraftableAccumulatorTests: XCTestCase {
         XCTAssertEqual(accumulator.seenItems["spam"], 15)
     }
 
-    func testRecursiveAccumulation() throws {
+    func testSimpleRecursiveAccumulation() throws {
+        accumulator.accumulate(element: "greeble", count: 1)
+        XCTAssertEqual(accumulator.seenItems.count, 3)
+
+        XCTAssertEqual(accumulator.seenItems["greeble"], 1)
+        XCTAssertEqual(accumulator.seenItems["wheat"], 2)
+        XCTAssertEqual(accumulator.seenItems["spam"], 3)
+    }
+
+    func testMultipleRecursiveAccumulation() throws {
+        accumulator.accumulate(element: "greeble", count: 2)
+        XCTAssertEqual(accumulator.seenItems.count, 3)
+
+        XCTAssertEqual(accumulator.seenItems["greeble"], 2)
+        XCTAssertEqual(accumulator.seenItems["wheat"], 4)
+        XCTAssertEqual(accumulator.seenItems["spam"], 6)
+    }
+
+    func testSimpleDeeperRecursiveAccumulation() throws {
+        accumulator.accumulate(element: "hoover", count: 1)
+        XCTAssertEqual(accumulator.seenItems.count, 4)
+
+        XCTAssertEqual(accumulator.seenItems["hoover"], 1)
+        XCTAssertEqual(accumulator.seenItems["greeble"], 2)
+        XCTAssertEqual(accumulator.seenItems["wheat"], 9)
+        XCTAssertEqual(accumulator.seenItems["spam"], 6)
+    }
+
+    func testMultipleDeeperRecursiveAccumulation() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        XCTAssertEqual(accumulator.seenItems.count, 4)
+
+        XCTAssertEqual(accumulator.seenItems["hoover"], 3)
+        XCTAssertEqual(accumulator.seenItems["greeble"], 3*2 + 5)
+        XCTAssertEqual(accumulator.seenItems["wheat"], 3*5 + 6*2 + 5*2)
+        XCTAssertEqual(accumulator.seenItems["spam"], 3*2*3 + 5*3)
     }
 
     let storeYaml = """
@@ -67,7 +103,7 @@ class CraftableAccumulatorTests: XCTestCase {
               recipe:
                   wheat: 2
                   spam: 3
-          hoover:  # 5 + 5*2 wheat (15), 2*3 spam (6)
+          hoover:  # 5 + 2*2 wheat (9), 2*3 spam (6)
               name: "Hoover"
               recipe:
                   wheat: 5
