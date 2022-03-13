@@ -2,6 +2,8 @@ import Foundation
 import Yams
 
 class CraftableStore: Codable {
+    static var shared = try! CraftableStore.loadStore()
+
     var version: String = ""
     var craftables: [String: Craftable] = [:]
 
@@ -24,7 +26,8 @@ class CraftableStore: Codable {
 }
 
 
-struct Craftable: Codable {
+struct Craftable: Codable, Identifiable {
+    let id: String
     let name: String
     let price: Int?
     let recipe: [RecipeStep]?
@@ -34,6 +37,8 @@ struct Craftable: Codable {
 
         name = try values.decode(String.self, forKey: .name)
         price = try? values.decode(Int.self, forKey: .price)
+
+        id = name
 
         var accumulator: [RecipeStep] = []
 

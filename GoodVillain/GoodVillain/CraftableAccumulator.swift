@@ -8,7 +8,7 @@ class CraftableAccumulator {
         self.store = store
     }
 
-    func accumulate(element: String, count: Int) {
+    func accumulate(element: String, count: Int = 1) {
         let elementCount = seenItems[element, default: 0]
         seenItems[element] = elementCount + count
 
@@ -16,7 +16,6 @@ class CraftableAccumulator {
         guard let craftable = store.craftables[element] else {
             fatalError("missing craftable: \(element)")
         }
-
         for _ in 0 ..< count {
             for recipeStep in craftable.recipe ?? [] {
                 accumulate(recipeStep: recipeStep)
@@ -24,8 +23,7 @@ class CraftableAccumulator {
         }
     }
 
-    func accumulate(recipeStep: RecipeStep) {
-        accumulate(element: recipeStep.element, count: recipeStep.count)
+    func accumulate(recipeStep: RecipeStep, count: Int = 1) {
+        accumulate(element: recipeStep.element, count: recipeStep.count * count)
     }
-
 }
