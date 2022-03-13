@@ -22,6 +22,7 @@ use and want to extend as time goes on.
 * tap a craftable to add the components to another list along with all the components
 
 That's going to involve ingesting the description of the craftables (probably YAML
+(yay [Yams](https://github.com/jpsim/Yams)
 because it's easy to edit), presenting stuff in a SwiftUI list, accumulate selections
 int another SwiftUI list.  Button to reset things.
 
