@@ -5,20 +5,21 @@ class CraftableStore: Codable {
     var version: String = ""
     var craftables: [String: Craftable] = [:]
 
-    static func loadStore() {
+    static func loadStore(data: Data) throws -> CraftableStore {
+        let decoder = YAMLDecoder()
+        let snorgle = try decoder.decode(CraftableStore.self, from: data)
+        print("YAY got \(snorgle.craftables.count) items")
+        return snorgle
+    }
+
+    static func loadStore() throws -> CraftableStore {
         guard let yamlFile = Bundle.main.url(forResource: "craftables", withExtension: "yml") else {
             print("oops, no craftables") 
             fatalError()
         }
 
-        do {
-            let data = try Data(contentsOf: yamlFile)
-            let decoder = YAMLDecoder()
-            let snorgle = try decoder.decode(CraftableStore.self, from: data)
-            print("YAY got \(snorgle.craftables.count) items")
-        } catch {
-            print("BOO \(error)")
-        }
+        let data = try Data(contentsOf: yamlFile)
+        return try loadStore(data: data)
     }
 }
 
@@ -53,4 +54,3 @@ struct RecipeStep: Codable {
     let element: String
     let count: Int
 }
-
