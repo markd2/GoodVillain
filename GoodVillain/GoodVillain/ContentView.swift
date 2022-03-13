@@ -6,7 +6,7 @@ let accumulator = CraftableAccumulator(store: store)
 
 struct CraftableList: View {
     let store: CraftableStore
-    @Binding var trigger: Int
+    @Binding var trigger: Int  // I have no idea what I'm doing to trigger a refresh
 
     var body: some View {
         List {
@@ -22,6 +22,23 @@ struct CraftableList: View {
     }
 }
 
+struct AccumulatorList: View {
+    let accumulator: CraftableAccumulator
+    @Binding var trigger: Int
+    
+    var body: some View {
+        VStack {
+            Text("\(trigger < 0 ? 0 : accumulator.seenItems.count) Items")
+            List {
+                ForEach(Array(accumulator.seenItems.keys.sorted()), id: \.self) { key in
+                    Text("\(key)  \(accumulator.seenItems[key]!)")
+                }
+            }
+        }
+
+    }
+}
+
 struct ContentView: View {
     @State var trigger = 0
 
@@ -29,6 +46,7 @@ struct ContentView: View {
         VStack {
             Text("Good Villain")
             CraftableList(store: store, trigger: $trigger)
+            AccumulatorList(accumulator: accumulator, trigger: $trigger)
         }
     }
 }
