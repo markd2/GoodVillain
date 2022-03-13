@@ -1,0 +1,52 @@
+---
+version: "1.0"
+craftables:
+    wheat:
+        name: "Wheat"
+        price: 1
+    corn:
+        name: "Corn"
+        price: 2
+    sugarcane:
+        name: "Sugarcane"
+        price: 3
+    potato:
+        name: "Potato(e)"
+        price: 7
+    wood:
+        name: "Wood"
+    branches:
+        name: "Branches"
+    firewood:
+        name: "Firewood"
+        recipe:
+            branches: 3
+    timber:
+        name: "Timber"
+        recipe:
+            wood: 3
+    woodenboard:
+        name: "Wooden Board"
+        recipe:
+            timber: 2
+    veneer:
+        name: "Veneer"
+        recipe:
+            woodenboard: 2
+    plywood:
+        name: "Plywood"
+        recipe:
+            veneer: 2
+            glue: 2
+    glue:
+        name: "Glue"
+        recipe:
+            cornmeal: 3
+            water: 1
+            firewood: 1
+    water:
+        name: "Water"
+    cornmeal:
+        name: "Cornmeal"
+        recipe:
+            corn: 5
