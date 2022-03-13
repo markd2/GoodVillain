@@ -26,4 +26,35 @@ class CraftableStore: Codable {
 struct Craftable: Codable {
     let name: String
     let price: Int?
+    let recipe: [RecipeStep]?
+
+    enum AdditionalInfoKeys: String, CodingKey {
+        case recipe
+    }
+
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        name = try values.decode(String.self, forKey: .name)
+        price = try? values.decode(Int.self, forKey: .price)
+
+        var accumulator: [RecipeStep] = []
+
+        if let steps = try? values.decode([String: Int].self, forKey: .recipe) {
+            for (key, value) in steps {
+                let step = RecipeStep(element: key, count: value)
+                accumulator.append(step)
+            }
+            recipe = accumulator
+        } else {
+            recipe = nil
+        }
+    }
+}
+
+
+struct RecipeStep: Codable {
+    let element: String
+    let count: Int
 }
