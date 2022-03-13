@@ -3,7 +3,7 @@ version: "1.0"
 craftables:
     apple:
         name: "Apple"
-        price: 10 # 500c tree, yields 50 apples
+        price: 10  # 500c tree, yields 50 apples
     applejuice:
         name: "Apple juice"
         recipe:
@@ -15,8 +15,18 @@ craftables:
             applejuice: 5
             ice: 2
             sugar: 2
+    applesauce:
+        name: "Applesauce"
+        recipe:
+            apple: 10
+            sugar: 2
+            water: 2
     branches:
         name: "Branches"
+    bread:
+        name: "Bread"
+        recipe:
+            wheat: 3
     butter:
         name: "Butter"
         recipe:
@@ -26,6 +36,20 @@ craftables:
         recipe:
             cream: 4
             firewood: 2
+    cheesetortilla:
+        name: "Cheese Tortilla"
+        recipe:
+            tortilla: 2
+            cheese: 1
+            egg: 2
+    coffeeberries:
+        name: "Coffee Berries"
+    cookies:
+        name: "Cookies"
+        recipe:
+            dough: 2
+            sugar: 1
+            firewood: 1
     corn:
         name: "Corn"
         price: 2
@@ -36,6 +60,12 @@ craftables:
     cotton:
         name: "Cotton"
         price: 17
+    cottoncandy:
+        name: "Cotton Candy"
+        recipe:
+            sugar: 3
+            water: 2
+            branches: 3
     cowfood:
         name: "Cow Food"
         recipe:
@@ -46,6 +76,18 @@ craftables:
         name: "Cream"
         recipe:
             milk: 3
+    crisps:
+        name: "Crisps"
+        recipe:
+            potato: 8
+            sunfloweroil: 1
+            starch: 2
+    dough:
+        name: "Dough"
+        recipe:
+            flour: 2
+            milk: 2
+            egg: 2
     egg:
         name: "Egg"
         recipe:
@@ -54,6 +96,15 @@ craftables:
         name: "Firewood"
         recipe:
             branches: 3
+    flour:
+        name: "Flour"
+        recipe:
+            wheat: 5
+    friedegg:
+        name: "Fried Egg"
+        recipe:
+            egg: 7
+            firewood: 1
     fruityoghurt:
         name: "Fruty Yoghurt"
         recipe:
@@ -81,6 +132,12 @@ craftables:
             cream: 2
             sugar: 1
             ice: 2
+    ketchup:
+        name: "Ketchup"
+        recipe:
+            tomatojuice: 3
+            water: 1
+            firewood: 1
     milk:
         name: "Milk"
         recipe:
@@ -93,6 +150,41 @@ craftables:
     potato:
         name: "Potato(e)"
         price: 7
+    orange:
+        name: "Orange"
+    orangejuice:
+        name: "Orange Juice"
+        recipe:
+            orange: 6
+            water: 4
+    pancake:
+        name: "Pancake"
+        recipe:
+            wheat: 7
+            water: 1
+            egg: 4
+    popcorn:
+        name: "Popcorn"
+        recipe:
+            corn: 4
+            firewood: 1
+    roastedcoffee:
+        name: "Roasted coffee"
+        recipe:
+            coffeeberries: 3
+            firewood: 1
+    sheepfood:
+        name: "Sheep Food"
+        recipe:
+            grass: 7
+            corn: 8
+            water: 1
+    starch:
+        name: "Starch"
+        recipe:
+            potato: 8
+            water: 3
+            firewood: 1
     sugar:
         name: "Sugar"
         recipe:
@@ -104,6 +196,15 @@ craftables:
     sunflower:
         name: "Sunflower"
         price: 25
+    sunfloweroil:
+        name: "Sunflower Oil"
+        recipe:
+            sunflowerseeds: 4
+            ice: 3
+    sunflowerseeds:
+        name: "Sunflower Seeds"
+        recipe:
+            sunflower: 7
     timber:
         name: "Timber"
         recipe:
@@ -111,6 +212,17 @@ craftables:
     tomato:
         name: "Tomato"
         price: 8
+    tomatojuice:
+        name: "Tomato Juice"
+        recipe:
+            tomato: 10
+            water: 4
+    tortilla:
+        name: "Tortilla"
+        recipe:
+            cornmeal: 3
+            water: 2
+            firewood: 1
     veneer:
         name: "Veneer"
         recipe:
@@ -122,6 +234,10 @@ craftables:
         price: 1
     wood:
         name: "Wood"
+    wool:
+        name: "Wool"
+        recipe:
+            sheepfood: 1
     woodenboard:
         name: "Wooden Board"
         recipe:

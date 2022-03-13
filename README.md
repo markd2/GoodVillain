@@ -26,3 +26,5 @@ That's going to involve ingesting the description of the craftables (probably YA
 because it's easy to edit), presenting stuff in a SwiftUI list, accumulate selections
 int another SwiftUI list.  Button to reset things.
 
+(yay - works!)
+
