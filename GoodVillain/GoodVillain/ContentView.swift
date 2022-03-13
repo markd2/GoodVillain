@@ -6,6 +6,7 @@ let accumulator = CraftableAccumulator(store: store)
 
 struct CraftableList: View {
     let store: CraftableStore
+    @Binding var trigger: Int
 
     var body: some View {
         List {
@@ -14,6 +15,7 @@ struct CraftableList: View {
                 Button(craftable.name) {
                     accumulator.accumulate(element: key)
                     print(accumulator.seenItems)
+                    trigger += 1
                 }
             }
         }
@@ -21,11 +23,12 @@ struct CraftableList: View {
 }
 
 struct ContentView: View {
+    @State var trigger = 0
 
     var body: some View {
         VStack {
             Text("Good Villain")
-            CraftableList(store: store)
+            CraftableList(store: store, trigger: $trigger)
         }
     }
 }
