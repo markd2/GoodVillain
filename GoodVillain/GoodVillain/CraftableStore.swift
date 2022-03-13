@@ -28,11 +28,6 @@ struct Craftable: Codable {
     let price: Int?
     let recipe: [RecipeStep]?
 
-    enum AdditionalInfoKeys: String, CodingKey {
-        case recipe
-    }
-
-
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
 
@@ -58,3 +53,4 @@ struct RecipeStep: Codable {
     let element: String
     let count: Int
 }
+
