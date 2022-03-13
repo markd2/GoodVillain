@@ -28,3 +28,14 @@ int another SwiftUI list.  Button to reset things.
 
 (yay - works!)
 
+### Next Version
+
+* have a filter on the accumulator for "basic" supplies (e.g. how much iron do I really
+  need for this upgrade?)
+* calculate effective price of stuffs
+* categories (building, foods, etc)
+* more compact UI
+* figure out decent way of triggering reloads (probably will come after working through
+  more of 100days of swiftom)
+
+
