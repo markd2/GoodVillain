@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct GoodVillainApp: App {
     init() {
-        CraftableStore.loadStore()
+        try! CraftableStore.loadStore()
     }
     
     var body: some Scene {
