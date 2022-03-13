@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct GoodVillainApp: App {
+    init() {
+        CraftableStore.loadStore()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

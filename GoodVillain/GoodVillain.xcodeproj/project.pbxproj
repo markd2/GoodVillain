@@ -14,6 +14,7 @@
 		7D94068527DE40B4006DC3B9 /* GoodVillainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94068427DE40B4006DC3B9 /* GoodVillainTests.swift */; };
 		7D94069F27DE45F5006DC3B9 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 7D94069E27DE45F5006DC3B9 /* Yams */; };
 		7D9406A127DE4B3F006DC3B9 /* craftables.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7D9406A027DE4B3F006DC3B9 /* craftables.yml */; };
+		7D9406A327DE4C35006DC3B9 /* CraftableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9406A227DE4C35006DC3B9 /* CraftableStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		7D94068027DE40B4006DC3B9 /* GoodVillainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodVillainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D94068427DE40B4006DC3B9 /* GoodVillainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodVillainTests.swift; sourceTree = "<group>"; };
 		7D9406A027DE4B3F006DC3B9 /* craftables.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = craftables.yml; path = ../../Assets/craftables.yml; sourceTree = "<group>"; };
+		7D9406A227DE4C35006DC3B9 /* CraftableStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftableStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				7D94067727DE40B4006DC3B9 /* Assets.xcassets */,
 				7D9406A027DE4B3F006DC3B9 /* craftables.yml */,
 				7D94067927DE40B4006DC3B9 /* Preview Content */,
+				7D9406A227DE4C35006DC3B9 /* CraftableStore.swift */,
 			);
 			path = GoodVillain;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9406A327DE4C35006DC3B9 /* CraftableStore.swift in Sources */,
 				7D94067627DE40AF006DC3B9 /* ContentView.swift in Sources */,
 				7D94067427DE40AF006DC3B9 /* GoodVillainApp.swift in Sources */,
 			);
