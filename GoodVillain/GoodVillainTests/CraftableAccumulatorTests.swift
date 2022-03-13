@@ -11,10 +11,12 @@ import XCTest
 class CraftableAccumulatorTests: XCTestCase {
     
     private var store: CraftableStore!
+    private var accumulator: CraftableAccumulator!
 
     override func setUpWithError() throws {
         let data = storeYaml.data(using: .utf8)!
         store = try CraftableStore.loadStore(data: data)
+        accumulator = CraftableAccumulator(store: store)
         print("yay")
     }
 
@@ -22,10 +24,29 @@ class CraftableAccumulatorTests: XCTestCase {
         store = nil
     }
 
-    func testSingleAcumulation() throws {
+    func testSingleAccumulateStep() throws {
+        let step = RecipeStep(element: "wheat", count: 12)
+        accumulator.accumulate(recipeStep: step)
+
+        XCTAssertEqual(accumulator.seenItems.count, 1)
+        XCTAssertEqual(accumulator.seenItems["wheat"], 12)
+    }
+
+    func testSingleAccumulation() throws {
+        accumulator.accumulate(element: "spam", count: 23)
+
+        XCTAssertEqual(accumulator.seenItems.count, 1)
+        XCTAssertEqual(accumulator.seenItems["spam"], 23)
     }
 
     func testMultipleAccumulation() throws {
+        accumulator.accumulate(element: "wheat", count: 10)
+        accumulator.accumulate(element: "spam", count: 15)
+        accumulator.accumulate(element: "wheat", count: 37)
+
+        XCTAssertEqual(accumulator.seenItems.count, 2)
+        XCTAssertEqual(accumulator.seenItems["wheat"], 47)
+        XCTAssertEqual(accumulator.seenItems["spam"], 15)
     }
 
     func testRecursiveAccumulation() throws {
