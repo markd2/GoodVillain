@@ -16,9 +16,11 @@ class CraftableAccumulator {
         guard let craftable = store.craftables[element] else {
             fatalError("missing craftable: \(element)")
         }
-        
-        for recipeStep in craftable.recipe ?? [] {
-            accumulate(recipeStep: recipeStep)
+
+        for _ in 0 ..< count {
+            for recipeStep in craftable.recipe ?? [] {
+                accumulate(recipeStep: recipeStep)
+            }
         }
     }
 
