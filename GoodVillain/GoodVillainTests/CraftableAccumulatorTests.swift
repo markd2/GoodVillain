@@ -22,6 +22,7 @@ class CraftableAccumulatorTests: XCTestCase {
 
     override func tearDownWithError() throws {
         store = nil
+        accumulator = nil
     }
 
     func testSingleAccumulateStep() throws {

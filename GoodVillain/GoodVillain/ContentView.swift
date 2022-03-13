@@ -1,16 +1,32 @@
-//
-//  ContentView.swift
-//  GoodVillain
-//
-//  Created by markd on 3/13/22.
-//
 
 import SwiftUI
 
-struct ContentView: View {
+let store = CraftableStore.shared
+let accumulator = CraftableAccumulator(store: store)
+
+struct CraftableList: View {
+    let store: CraftableStore
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List {
+            ForEach(Array(store.craftables.keys.sorted()), id: \.self) { key in
+                let craftable = store.craftables[key]!
+                Button(craftable.name) {
+                    accumulator.accumulate(element: key)
+                    print(accumulator.seenItems)
+                }
+            }
+        }
+    }
+}
+
+struct ContentView: View {
+
+    var body: some View {
+        VStack {
+            Text("Good Villain")
+            CraftableList(store: store)
+        }
     }
 }
 
