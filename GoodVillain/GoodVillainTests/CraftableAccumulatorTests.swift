@@ -82,6 +82,48 @@ class CraftableAccumulatorTests: XCTestCase {
         XCTAssertEqual(accumulator.seenItems["spam"], 3*2*3 + 5*3)
     }
 
+    func testAllFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+
+        let items = accumulator.filteredItems(by: .all)
+        XCTAssertEqual(items.count, 4)
+
+        XCTAssertEqual(items["hoover"], 3)
+        XCTAssertEqual(items["greeble"], 3*2 + 5)
+        XCTAssertEqual(items["wheat"], 3*5 + 6*2 + 5*2)
+        XCTAssertEqual(items["spam"], 3*2*3 + 5*3)
+    }
+
+    func testBasicFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        let items = accumulator.filteredItems(by: .basic)
+
+        XCTAssertEqual(items.count, 2)
+        XCTAssertEqual(items["wheat"], 3*5 + 6*2 + 5*2)
+        XCTAssertEqual(items["spam"], 3*2*3 + 5*3)
+    }
+
+    func testFoodFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        let items = accumulator.filteredItems(by: .food)
+
+        XCTAssertEqual(items.count, 1)
+        accumulator.accumulate(element: "greeble", count: 5)
+    }
+
+    func testConstructionFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        let items = accumulator.filteredItems(by: .construction)
+
+        XCTAssertEqual(items.count, 1)
+        XCTAssertEqual(items["hoover"], 3)
+    }
+
+
     let storeYaml = """
       ---
       version: "1.0"
