@@ -25,12 +25,28 @@ struct CraftableList: View {
 struct AccumulatorList: View {
     let accumulator: CraftableAccumulator
     @Binding var trigger: Int
+    @Binding var selection: Int
+
+    var keys: [String] {
+        switch selection {
+        case 0:
+            return Array(accumulator.seenItems.keys.sorted())
+        case 1:
+            return Array(accumulator.filteredItems(by: .basic).keys.sorted())
+        case 2:
+            return Array(accumulator.filteredItems(by: .food).keys.sorted())
+        case 3:
+            return Array(accumulator.filteredItems(by: .construction).keys.sorted())
+        default:
+            return []
+        }
+    }
     
     var body: some View {
         VStack {
-            Text("\(trigger < 0 ? 0 : accumulator.seenItems.count) Items")
+            Text("\(trigger < 0 ? 0 : keys.count) Items")
             List {
-                ForEach(Array(accumulator.seenItems.keys.sorted()), id: \.self) { key in
+                ForEach(keys, id: \.self) { key in
                     Text("\(key)  \(accumulator.seenItems[key]!)")
                 }
             }
@@ -39,8 +55,24 @@ struct AccumulatorList: View {
     }
 }
 
+struct AccumulationFilter: View {
+    @Binding var selection: Int
+
+    var body: some View {
+        Picker("Filter", selection: $selection) {
+            Group {
+                Text("all").tag(0)
+                Text("basic").tag(1)
+                Text("food").tag(2)
+                Text("construction").tag(3)
+            }
+        }.pickerStyle(.segmented)
+    }
+}
+
 struct ContentView: View {
-    @State var trigger = 0
+    @State private var trigger = 0
+    @State private var selection = 0
 
     var body: some View {
         VStack {
@@ -50,7 +82,9 @@ struct ContentView: View {
                 accumulator.reset()
                 trigger += 1
             }
-            AccumulatorList(accumulator: accumulator, trigger: $trigger)
+            AccumulationFilter(selection: $selection)
+            AccumulatorList(accumulator: accumulator,
+                            trigger: $trigger, selection: $selection)
         }
     }
 }

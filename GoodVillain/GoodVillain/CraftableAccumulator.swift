@@ -4,6 +4,13 @@ class CraftableAccumulator {
     let store: CraftableStore
     var seenItems: [String: Int] = [:]
 
+    enum Filter {
+        case all
+        case basic
+        case food
+        case construction
+    }
+
     init(store: CraftableStore) {
         self.store = store
     }
@@ -29,5 +36,24 @@ class CraftableAccumulator {
 
     func accumulate(recipeStep: RecipeStep, count: Int = 1) {
         accumulate(element: recipeStep.element, count: recipeStep.count * count)
+    }
+
+    func filteredItems(by filter: Filter) -> [String: Int] {
+        let items = seenItems.filter { key, value in
+            guard let item = store.craftables[key] else { return false }
+
+            switch filter {
+            case .all:
+                return true
+            case .basic:
+                return item.type == "basic"
+            case .food:
+                return item.type == "food"
+            case .construction:
+                return item.type == "construction"
+            }
+        }
+
+        return items
     }
 }

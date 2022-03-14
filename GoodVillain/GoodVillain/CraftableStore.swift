@@ -27,16 +27,20 @@ class CraftableStore: Codable {
 
 
 struct Craftable: Codable, Identifiable {
+    // should be the dictionary key from the yaml, but I'm not smart enough to
+    // figure out how to get it down here without duplicating the key.
     let id: String
     let name: String
     let price: Int?
     let recipe: [RecipeStep]?
+    let type: String?
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
 
         name = try values.decode(String.self, forKey: .name)
         price = try? values.decode(Int.self, forKey: .price)
+        type = try? values.decode(String.self, forKey: .type)
 
         id = name
 

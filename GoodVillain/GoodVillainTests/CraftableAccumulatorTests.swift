@@ -1,10 +1,3 @@
-//
-//  CraftableAccumulatorTests.swift
-//  GoodVillainTests
-//
-//  Created by markd on 3/13/22.
-//
-
 import XCTest
 @testable import GoodVillain
 
@@ -89,6 +82,48 @@ class CraftableAccumulatorTests: XCTestCase {
         XCTAssertEqual(accumulator.seenItems["spam"], 3*2*3 + 5*3)
     }
 
+    func testAllFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+
+        let items = accumulator.filteredItems(by: .all)
+        XCTAssertEqual(items.count, 4)
+
+        XCTAssertEqual(items["hoover"], 3)
+        XCTAssertEqual(items["greeble"], 3*2 + 5)
+        XCTAssertEqual(items["wheat"], 3*5 + 6*2 + 5*2)
+        XCTAssertEqual(items["spam"], 3*2*3 + 5*3)
+    }
+
+    func testBasicFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        let items = accumulator.filteredItems(by: .basic)
+
+        XCTAssertEqual(items.count, 2)
+        XCTAssertEqual(items["wheat"], 3*5 + 6*2 + 5*2)
+        XCTAssertEqual(items["spam"], 3*2*3 + 5*3)
+    }
+
+    func testFoodFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        let items = accumulator.filteredItems(by: .food)
+
+        XCTAssertEqual(items.count, 1)
+        accumulator.accumulate(element: "greeble", count: 5)
+    }
+
+    func testConstructionFiltering() throws {
+        accumulator.accumulate(element: "hoover", count: 3)
+        accumulator.accumulate(element: "greeble", count: 5)
+        let items = accumulator.filteredItems(by: .construction)
+
+        XCTAssertEqual(items.count, 1)
+        XCTAssertEqual(items["hoover"], 3)
+    }
+
+
     let storeYaml = """
       ---
       version: "1.0"
@@ -96,16 +131,20 @@ class CraftableAccumulatorTests: XCTestCase {
           wheat:  # 1 wheat
               name: "Wheat"
               price: 1
+              type: basic
           spam:   # 1 spam
               name: "Spam"
               price: 2
+              type: basic
           greeble:  # 2 wheat, 3 spam
               name: "Greeble"
+              type: food
               recipe:
                   wheat: 2
                   spam: 3
           hoover:  # 5 + 2*2 wheat (9), 2*3 spam (6)
               name: "Hoover"
+              type: construction
               recipe:
                   wheat: 5
                   greeble: 2
