@@ -1,10 +1,3 @@
-//
-//  CraftableAccumulatorTests.swift
-//  GoodVillainTests
-//
-//  Created by markd on 3/13/22.
-//
-
 import XCTest
 @testable import GoodVillain
 
@@ -96,16 +89,20 @@ class CraftableAccumulatorTests: XCTestCase {
           wheat:  # 1 wheat
               name: "Wheat"
               price: 1
+              type: basic
           spam:   # 1 spam
               name: "Spam"
               price: 2
+              type: basic
           greeble:  # 2 wheat, 3 spam
               name: "Greeble"
+              type: food
               recipe:
                   wheat: 2
                   spam: 3
           hoover:  # 5 + 2*2 wheat (9), 2*3 spam (6)
               name: "Hoover"
+              type: construction
               recipe:
                   wheat: 5
                   greeble: 2

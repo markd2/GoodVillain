@@ -4,54 +4,66 @@ craftables:
     apple:
         name: "Apple"
         price: 10  # 500c tree, yields 50 apples
+        type: basic
     applejuice:
         name: "Apple juice"
+        type: food
         recipe:
             apple: 6
             water: 3
     applepop:
         name: "Apple-flavored ice pop"
+        type: food
         recipe:
             applejuice: 5
             ice: 2
             sugar: 2
     applesauce:
         name: "Applesauce"
+        type: food
         recipe:
             apple: 10
             sugar: 2
             water: 2
     branches:
         name: "Branches"
+        type: basic
     bread:
         name: "Bread"
+        type: food
         recipe:
             wheat: 3
     butter:
         name: "Butter"
+        type: food
         recipe:
             cream: 2
     cheese:
         name: "Cheese"
+        type: food
         recipe:
             cream: 4
             firewood: 2
     cheesetortilla:
         name: "Cheese Tortilla"
+        type: food
         recipe:
             tortilla: 2
             cheese: 1
             egg: 2
     coffeeberries:
         name: "Coffee Berries"
+        type: food
     cookies:
         name: "Cookies"
+        type: food
         recipe:
             dough: 2
             sugar: 1
             firewood: 1
     corn:
         name: "Corn"
+        type: basic
         price: 2
     cornmeal:
         name: "Cornmeal"
@@ -59,9 +71,11 @@ craftables:
             corn: 5
     cotton:
         name: "Cotton"
+        type: basic
         price: 17
     cottoncandy:
         name: "Cotton Candy"
+        type: food
         recipe:
             sugar: 3
             water: 2
@@ -74,22 +88,26 @@ craftables:
             water: 1
     cream:
         name: "Cream"
+        type: food
         recipe:
             milk: 3
     crisps:
         name: "Crisps"
+        type: food
         recipe:
             potato: 8
             sunfloweroil: 1
             starch: 2
     dough:
         name: "Dough"
+        type: food
         recipe:
             flour: 2
             milk: 2
             egg: 2
     egg:
         name: "Egg"
+        type: basic
         recipe:
             henfood: 1
     firewood:
@@ -98,26 +116,31 @@ craftables:
             branches: 3
     flour:
         name: "Flour"
+        type: food
         recipe:
             wheat: 5
     friedegg:
         name: "Fried Egg"
+        type: food
         recipe:
             egg: 7
             firewood: 1
     fruityoghurt:
         name: "Fruty Yoghurt"
+        type: food
         recipe:
             cream: 2
             apple: 5
     glue:
         name: "Glue"
+        type: basic
         recipe:
             cornmeal: 3
             water: 1
             firewood: 1
     grass:
         name: "Grass"
+        type: basic
     henfood:
         name: "Hen food"
         recipe:
@@ -128,48 +151,58 @@ craftables:
             water: 3
     ice cream:
         name: "Ice Cream"
+        type: food
         recipe:
             cream: 2
             sugar: 1
             ice: 2
     ketchup:
         name: "Ketchup"
+        type: food
         recipe:
             tomatojuice: 3
             water: 1
             firewood: 1
     milk:
         name: "Milk"
+        type: basic
         recipe:
             cowfood: 1
     plywood:
         name: "Plywood"
+        type: construction
         recipe:
             veneer: 2
             glue: 2
     potato:
         name: "Potato(e)"
+        type: basic
         price: 7
     orange:
         name: "Orange"
+        type: basic
     orangejuice:
         name: "Orange Juice"
+        type: food
         recipe:
             orange: 6
             water: 4
     pancake:
         name: "Pancake"
+        type: food
         recipe:
             wheat: 7
             water: 1
             egg: 4
     popcorn:
         name: "Popcorn"
+        type: food
         recipe:
             corn: 4
             firewood: 1
     roastedcoffee:
         name: "Roasted coffee"
+        type: food
         recipe:
             coffeeberries: 3
             firewood: 1
@@ -192,17 +225,21 @@ craftables:
             firewood: 1
     sugarcane:
         name: "Sugarcane"
+        type: basic
         price: 3
     sunflower:
         name: "Sunflower"
+        type: basic
         price: 25
     sunfloweroil:
         name: "Sunflower Oil"
+        type: food
         recipe:
             sunflowerseeds: 4
             ice: 3
     sunflowerseeds:
         name: "Sunflower Seeds"
+        type: food
         recipe:
             sunflower: 7
     timber:
@@ -211,31 +248,39 @@ craftables:
             wood: 3
     tomato:
         name: "Tomato"
+        type: basic
         price: 8
     tomatojuice:
         name: "Tomato Juice"
+        type: food
         recipe:
             tomato: 10
             water: 4
     tortilla:
         name: "Tortilla"
+        type: food
         recipe:
             cornmeal: 3
             water: 2
             firewood: 1
     veneer:
         name: "Veneer"
+        type: construction
         recipe:
             woodenboard: 2
     water:
         name: "Water"
+        type: basic
     wheat:
         name: "Wheat"
+        type: basic
         price: 1
     wood:
         name: "Wood"
+        type: basic
     wool:
         name: "Wool"
+        type: basic
         recipe:
             sheepfood: 1
     woodenboard:
