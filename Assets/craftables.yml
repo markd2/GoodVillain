@@ -25,6 +25,12 @@ craftables:
             apple: 10
             sugar: 2
             water: 2
+    bioplastic:
+        name: "Bioplastic"
+        recipe:
+            cornmeal: 4
+            starch: 2
+            firewood: 1
     branches:
         name: "Branches"
         type: basic
@@ -33,11 +39,38 @@ craftables:
         type: food
         recipe:
             wheat: 3
+    brick:
+        name: "Brick"
+        type: construction
+        recipe:
+            clay: 3
+            cement: 1
+            water: 2
     butter:
         name: "Butter"
         type: food
         recipe:
             cream: 2
+    cardboard:
+        name: "Cardboard"
+        recipe:
+            timber: 1
+            glue: 1
+            firewood: 1
+    cement:
+        name: "Cement"
+        type: construction
+        recipe:
+            crushedstone: 4
+            water: 1
+            sand: 2
+    chair:
+        name: "Chair"
+        type: construction
+        recipe:
+            woodenboard: 4
+            nails: 2
+            plywood: 1
     cheese:
         name: "Cheese"
         type: food
@@ -51,6 +84,12 @@ craftables:
             tortilla: 2
             cheese: 1
             egg: 2
+    clay:
+        name: "Clay"
+        type: basic
+    coal:
+        name: "Coal"
+        type: basic
     coffeeberries:
         name: "Coffee Berries"
         type: food
@@ -80,6 +119,14 @@ craftables:
             sugar: 3
             water: 2
             branches: 3
+    cottoncloth:
+        name: "Cotton cloth"
+        recipe:
+            cottonthreads: 4
+    cottonthreads:
+        name: "Cotton threads"
+        recipe:
+            cotton: 4
     cowfood:
         name: "Cow Food"
         recipe:
@@ -98,6 +145,11 @@ craftables:
             potato: 8
             sunfloweroil: 1
             starch: 2
+    crushedstone:
+        name: "Crushed Stone"
+        type: construction
+        recipe:
+            stone: 5
     dough:
         name: "Dough"
         type: food
@@ -105,6 +157,19 @@ craftables:
             flour: 2
             milk: 2
             egg: 2
+    door:
+        name: "Door"
+        type: construction
+        recipe:
+            plywood: 3
+            glue: 2
+            glass: 1
+    dyes:
+        name: "Dyes"
+        recipe:
+            clay: 5
+            sand: 2
+            ironore: 1
     egg:
         name: "Egg"
         type: basic
@@ -131,6 +196,12 @@ craftables:
         recipe:
             cream: 2
             apple: 5
+    glass:
+        name: "Glass"
+        type: construction
+        recipe:
+            sand: 3
+            firewood: 2
     glue:
         name: "Glue"
         type: basic
@@ -138,6 +209,14 @@ craftables:
             cornmeal: 3
             water: 1
             firewood: 1
+    goldore:
+        name: "Gold Ore"
+        type: basic
+    gold:
+        name: "Gold"
+        recipe:
+            goldore: 10
+            firewood: 2
     grass:
         name: "Grass"
         type: basic
@@ -156,6 +235,15 @@ craftables:
             cream: 2
             sugar: 1
             ice: 2
+    iron:
+        name: "Iron"
+        type: construction
+        recipe:
+            ironore: 3
+            firewood: 1
+    ironore:
+        name: "Iron Ore"
+        type: basic
     ketchup:
         name: "Ketchup"
         type: food
@@ -168,6 +256,21 @@ craftables:
         type: basic
         recipe:
             cowfood: 1
+    nails:
+        name: "Nails"
+        type: construction
+        recipe:
+            iron: 3
+            firewood: 2
+    orange:
+        name: "Orange"
+        type: basic
+    orangejuice:
+        name: "Orange Juice"
+        type: food
+        recipe:
+            orange: 6
+            water: 4
     plywood:
         name: "Plywood"
         type: construction
@@ -178,15 +281,6 @@ craftables:
         name: "Potato(e)"
         type: basic
         price: 7
-    orange:
-        name: "Orange"
-        type: basic
-    orangejuice:
-        name: "Orange Juice"
-        type: food
-        recipe:
-            orange: 6
-            water: 4
     pancake:
         name: "Pancake"
         type: food
@@ -200,24 +294,75 @@ craftables:
         recipe:
             corn: 4
             firewood: 1
+    porcelaincup:
+        name: "Porcelain Cup"
+        recipe:
+            clay: 3
+            firewood: 1
+            silver: 1
     roastedcoffee:
         name: "Roasted coffee"
         type: food
         recipe:
             coffeeberries: 3
             firewood: 1
+    rooftiles:
+        name: "Roof tiles"
+        type: construction
+        recipe:
+            clay: 4
+            firewood: 1
+            sand: 1
+    rope:
+        name: "Rope"
+        recipe:
+            grass: 4
+            cottonthreads: 2
+    sand:
+        name: "Sand"
+        type: construction
+        recipe:
+            sandstone: 3
+    sandstone:
+        name: "Sandstone"
+        type: basic
     sheepfood:
         name: "Sheep Food"
         recipe:
             grass: 7
             corn: 8
             water: 1
+    silkthreads:
+        name: "Silk Threads"
+        recipe:
+            silkwormcocoon: 7
+    silkwormcocoon:
+        name: "Silkworm cocoon"
+        type: basic
+    silverore:
+        name: "Silver Ore"
+        type: basic
+    silver:
+        name: "Silver"
+        recipe:
+            silverore: 5
+            firewood: 2
     starch:
         name: "Starch"
         recipe:
             potato: 8
             water: 3
             firewood: 1
+    steel:
+        name: "Steel"
+        type: construction
+        recipe:
+            iron: 3
+            firewood: 2
+            coal: 1
+    stone:
+        name: "Stone"
+        type: basic
     sugar:
         name: "Sugar"
         recipe:
@@ -242,6 +387,13 @@ craftables:
         type: food
         recipe:
             sunflower: 7
+    table:
+        name: "Table"
+        type: construction
+        recipe:
+            plywood: 2
+            nails: 4
+            glue: 1
     timber:
         name: "Timber"
         recipe:
@@ -275,6 +427,13 @@ craftables:
         name: "Wheat"
         type: basic
         price: 1
+    window:
+        name: "Window"
+        type: construction
+        recipe:
+            glass: 2
+            plywood: 2
+            glue: 1
     wood:
         name: "Wood"
         type: basic
@@ -283,7 +442,15 @@ craftables:
         type: basic
         recipe:
             sheepfood: 1
+    woolfabric:
+        name: "Wool Fabric"
+        recipe:
+            yarn: 4
     woodenboard:
         name: "Wooden Board"
         recipe:
             timber: 2
+    yarn:
+        name: "Yarn / Woolen Threads"
+        recipe:
+            wool: 3
