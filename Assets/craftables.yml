@@ -476,3 +476,6 @@ craftables:
         name: "Yarn / Woolen Threads"
         recipe:
             wool: 3
+    watermelon:
+        name: "Watermelon"
+        price: 100
