@@ -202,6 +202,12 @@ craftables:
         recipe:
             sand: 3
             firewood: 2
+    glassjar:
+        name: "Glass Jar"
+        recipe:
+            glass: 3
+            iron: 1
+            firewood: 1
     glue:
         name: "Glue"
         type: basic
@@ -235,6 +241,11 @@ craftables:
             cream: 2
             sugar: 1
             ice: 2
+    insulatingtape:
+        name: "Insulating Tape"
+        recipe:
+            cottoncloth: 1
+            glue: 3
     iron:
         name: "Iron"
         type: construction
@@ -271,6 +282,11 @@ craftables:
         recipe:
             orange: 6
             water: 4
+    paints:
+        name: "Paints"
+        recipe:
+            dyes: 3
+            sunfloweroil: 1
     plywood:
         name: "Plywood"
         type: construction
@@ -347,6 +363,12 @@ craftables:
         recipe:
             silverore: 5
             firewood: 2
+    silverjewelry:
+        name: "Silver Jewelry"
+        recipe:
+            silver: 3
+            glass: 2
+            glue: 1
     starch:
         name: "Starch"
         recipe:
