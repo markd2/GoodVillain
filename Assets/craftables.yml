@@ -5,6 +5,13 @@ craftables:
         name: "Apple"
         price: 10  # 500c tree, yields 50 apples
         type: basic
+    applejam:
+        name: "Apple Jam"
+        type: food
+        recipe:
+            applejuice: 6
+            glassjar: 1
+            firewood: 1
     applejuice:
         name: "Apple juice"
         type: food
@@ -276,6 +283,13 @@ craftables:
     orange:
         name: "Orange"
         type: basic
+    orangejam:
+        name: "Orange Jam"
+        type: food
+        recipe:
+            orangejuice: 5
+            glassjar: 1
+            firewood: 2
     orangejuice:
         name: "Orange Juice"
         type: food
@@ -479,3 +493,8 @@ craftables:
     watermelon:
         name: "Watermelon"
         price: 100
+    watermelonjuice:
+        name: "Watermelon Juice"
+        recipe:
+            watermelon: 5
+            water: 4
