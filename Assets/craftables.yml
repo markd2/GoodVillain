@@ -32,6 +32,12 @@ craftables:
             apple: 10
             sugar: 2
             water: 2
+    bed:
+        name: "Bed"
+        recipe:
+            plywood: 4
+            nails: 4
+            cottoncloth: 2
     bioplastic:
         name: "Bioplastic"
         recipe:
@@ -233,6 +239,12 @@ craftables:
     grass:
         name: "Grass"
         type: basic
+    hammer:
+        name: "Hammer"
+        recipe:
+            steel: 2
+            woodenboard: 2
+            nails: 2
     henfood:
         name: "Hen food"
         recipe:
@@ -459,6 +471,20 @@ craftables:
     water:
         name: "Water"
         type: basic
+    watermelon:
+        name: "Watermelon"
+        price: 100
+    watermelonjuice:
+        name: "Watermelon Juice"
+        recipe:
+            watermelon: 5
+            water: 4
+    wardrobe:
+        name: "Wardrobe"
+        recipe:
+            plywood: 4
+            nails: 5
+            glass: 2
     wheat:
         name: "Wheat"
         type: basic
@@ -490,11 +516,3 @@ craftables:
         name: "Yarn / Woolen Threads"
         recipe:
             wool: 3
-    watermelon:
-        name: "Watermelon"
-        price: 100
-    watermelonjuice:
-        name: "Watermelon Juice"
-        recipe:
-            watermelon: 5
-            water: 4
