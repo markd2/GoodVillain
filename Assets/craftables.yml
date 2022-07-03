@@ -250,6 +250,10 @@ craftables:
     grass:
         name: "Grass"
         type: basic
+    groundcoffee:
+        name: "Ground Coffee"
+        recipe:
+            roastedcoffee: 4
     hammer:
         name: "Hammer"
         recipe:
@@ -427,7 +431,7 @@ craftables:
         name: "Stone"
         type: basic
     sugar:
-        name: "Sugar"
+        name: "Sugar (cubes)"
         recipe:
             sugarcane: 5
             firewood: 1
@@ -435,6 +439,10 @@ craftables:
         name: "Sugarcane"
         type: basic
         price: 3
+    sugarpowder:
+        name: "Sugar Powder"
+        recipe:
+            sugar: 2
     sunflower:
         name: "Sunflower"
         type: basic
