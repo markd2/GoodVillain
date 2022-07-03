@@ -44,6 +44,11 @@ craftables:
             cornmeal: 4
             starch: 2
             firewood: 1
+    blanket:
+        name: "Blanket"
+        recipe:
+            woolfabric: 2
+            paints: 1
     branches:
         name: "Branches"
         type: basic
@@ -64,6 +69,12 @@ craftables:
         type: food
         recipe:
             cream: 2
+    buttons:
+        name: "Buttons"
+        recipe:
+            bioplastic: 3
+            dyes: 2
+            firewood: 1
     cardboard:
         name: "Cardboard"
         recipe:
@@ -374,6 +385,10 @@ craftables:
             grass: 7
             corn: 8
             water: 1
+    silkfabric:
+        name: "Silk Fabric"
+        recipe:
+            silkthreads: 4
     silkthreads:
         name: "Silk Threads"
         recipe:
